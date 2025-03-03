@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Typography, IconButton, Button } from "@material-tailwind/react";
 
-const LINKS = ["About Us", "Careers", "Press", "Blog", "Pricing"];
+const LINKS = ["Inicio", "Servicios", "Contactanos"];
 const CURRENT_YEAR = new Date().getFullYear();
 
 export function Footer() {
@@ -12,6 +12,9 @@ export function Footer() {
         <div className="flex flex-wrap justify-center gap-8 md:justify-between">
           <div className="text-center md:text-left">
             <Typography
+            placeholder=""
+             onPointerEnterCapture={() => {}} 
+             onPointerLeaveCapture={() => {}}
               as="a"
               href="https://www.material-tailwind.com"
               target="_blank"
@@ -19,15 +22,22 @@ export function Footer() {
               color="white"
               className="mb-4"
             >
-              Material Tailwind
+              Desarrollo de Aplicaciones Web y Móviles
             </Typography>
-            <Typography color="white" className="mb-12 font-normal">
-              The reward for getting on the stage is fame.
+            <Typography
+            placeholder=""
+             onPointerEnterCapture={() => {}} 
+             onPointerLeaveCapture={() => {}}
+            color="white" className="mb-12 font-normal">
+              Agradecemos su visita. ¡Estamos a su disposición!
             </Typography>
             <ul className="flex flex-wrap items-center justify-center md:justify-start">
               {LINKS.map((link, idx) => (
                 <li key={link}>
                   <Typography
+                  placeholder=""
+                   onPointerEnterCapture={() => {}} 
+                   onPointerLeaveCapture={() => {}}
                     as="a"
                     href="#"
                     color="white"
@@ -42,71 +52,95 @@ export function Footer() {
             </ul>
           </div>
           <div className="mt-8 w-full md:mt-0 md:w-auto">
-            <Typography variant="h6" color="white" className="mb-3">
-              Get the app
+            <Typography
+            placeholder=""
+             onPointerEnterCapture={() => {}} 
+             onPointerLeaveCapture={() => {}} 
+            variant="h6" color="white" className="mb-3">
+              Trayectoria
             </Typography>
             <div className="flex flex-col gap-2">
-              <Button
-                color="white"
-                className="flex items-center justify-center"
-              >
-                <Image
-                  width={256}
-                  height={256}
-                  src="/logos/logo-apple.png"
-                  className="-mt-0.5 mr-2 h-6 w-6"
-                  alt="ios"
-                />
-                App Store
+            <a href="https://jesuselias.github.io/Portafolio/" target="_blank">
+                <Button
+                  size="lg"
+                  color="white"
+                  className="flex justify-center items-center gap-3"
+                >
+                  <Image
+                    width={256}
+                    height={256}
+                    src="/logos/logo-react.png"
+                    alt="metamask"
+                    className="w-6 h-6"
+                  />
+                  Portafolio
               </Button>
-              <Button
-                color="white"
-                className="flex items-center justify-center"
-              >
-                <Image
-                  width={256}
-                  height={256}
-                  src="/logos/logo-google.png"
-                  className="-mt-0.5 mr-2 h-6 w-6"
-                  alt="ios"
-                />
-                Google Play
-              </Button>
+              </a>
+              <a href="https://jesuselias.github.io/Experiencia/" target="_blank">
+                <Button
+                  size="lg"
+                  color="white"
+                  className="flex justify-center items-center gap-3"
+                >
+                  <Image
+                    width={256}
+                    height={256}
+                    src="/logos/logo-angular.png"
+                    alt="metamask"
+                    className="w-6 h-6"
+                  />
+                  Experiencia
+                </Button>
+              </a>
             </div>
           </div>
         </div>
         <div className="mt-16 flex flex-wrap items-center justify-center gap-y-4 gap-x-8 border-t border-gray-700 py-7 md:justify-between">
           <Typography
+          placeholder=""
+             onPointerEnterCapture={() => {}} 
+             onPointerLeaveCapture={() => {}}
             color="white"
             className="text-center font-normal opacity-75"
           >
-            &copy; {CURRENT_YEAR} Made with{" "}
+            &copy; {CURRENT_YEAR} Hecho con{" "}
+            <a href="https://nextjs.org/" target="_blank">
+              Next.js
+            </a>{" "}
+            +{" "}
             <a href="https://www.material-tailwind.com" target="_blank">
               Material Tailwind
-            </a>{" "}
-            by{" "}
-            <a href="https://www.creative-tim.com" target="_blank">
-              Creative Tim
+              
             </a>
             .
           </Typography>
 
           <div className="flex gap-2">
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-twitter text-2xl not-italic opacity-75"></i>
+            <a href="https://github.com/jesuselias" target="_blank">
+              <IconButton
+                variant="text"
+                color="white"
+                size="sm"
+              >
+                <i className="fa-brands fa-github text-2xl not-italic opacity-75" />
+              </IconButton>
+            </a>
+            <a href="https://www.linkedin.com/in/jesus-e-elias-s-8b0345148/" target="_blank">
+              <IconButton
+                variant="text"
+                color="white"
+              >
+                <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75" />
+              </IconButton>
+            </a>
+            <a href="https://www.youtube.com/watch?v=3jwGbwSr4WE&t=12s" target="_blank">
+              <IconButton
+                variant="text"
+                color="white"
+              >
+              <i className="fa-brands fa-youtube text-2xl not-italic opacity-75" />
             </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-facebook text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-github text-2xl not-italic opacity-75"></i>
-            </IconButton>
-            <IconButton variant="text" color="white">
-              <i className="fa-brands fa-dribbble text-2xl not-italic opacity-75"></i>
-            </IconButton>
+            </a>
           </div>
         </div>
       </div>

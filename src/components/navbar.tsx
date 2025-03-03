@@ -1,10 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import {
   Navbar as MTNavbar,
   Collapse,
   IconButton,
   Typography,
   Button,
+  Avatar,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -16,6 +18,7 @@ function NavItem({ children, href }: NavItemProps) {
   return (
     <li>
       <Typography
+        placeholder=""
         as="a"
         href={href || "#"}
         target={href ? "_blank" : "_self"}
@@ -66,54 +69,67 @@ export function Navbar() {
       className="fixed top-0 z-50 border-0"
     >
       <div className="container mx-auto flex items-center justify-between">
-        <Typography
-          as="a"
-          href="https://www.material-tailwind.com"
-          target="_blank"
-          variant="h6"
-          color={isScrolling ? "gray" : "white"}
-        >
-          Material Tailwind
-        </Typography>
+        <Avatar src="logos/logo-je-blue.png" className="mb-3" size="lg" />
         <ul
           className={`ml-10 hidden items-center gap-6 lg:flex ${
             isScrolling ? "text-gray-900" : "text-white"
           }`}
         >
-          <NavItem>Home</NavItem>
-          <NavItem>About Us</NavItem>
-          <NavItem>Contact Us</NavItem>
-          <NavItem href="https://www.material-tailwind.com/docs/react/installation">
+          <NavItem>Inicio</NavItem>
+          <NavItem>Servicios</NavItem>
+          <NavItem>Contactanos</NavItem>
+          {/* <NavItem href="https://www.material-tailwind.com/docs/react/installation">
             Docs
-          </NavItem>
+          </NavItem> */}
         </ul>
         <div className="hidden gap-2 lg:flex lg:items-center">
+          <a href="https://github.com/jesuselias" target="_blank">
+            <IconButton
+              variant="text"
+              color={isScrolling ? "gray" : "white"}
+              size="sm"
+            >
+              <i className="fa-brands fa-github text-base" />
+            </IconButton>
+          </a>
+          <a href="https://www.linkedin.com/in/jesus-e-elias-s-8b0345148/" target="_blank">
+            <IconButton
+              variant="text"
+              color={isScrolling ? "gray" : "white"}
+              size="sm"
+            >
+              <i className="fa-brands fa-linkedin text-base" />
+            </IconButton>
+          </a>
+          <a href="https://www.youtube.com/watch?v=3jwGbwSr4WE&t=12s" target="_blank">
           <IconButton
             variant="text"
             color={isScrolling ? "gray" : "white"}
             size="sm"
           >
-            <i className="fa-brands fa-twitter text-base" />
+            <i className="fa-brands fa-youtube text-base" />
           </IconButton>
-          <IconButton
-            variant="text"
-            color={isScrolling ? "gray" : "white"}
-            size="sm"
-          >
-            <i className="fa-brands fa-facebook text-base" />
-          </IconButton>
-          <IconButton
-            variant="text"
-            color={isScrolling ? "gray" : "white"}
-            size="sm"
-          >
-            <i className="fa-brands fa-instagram text-base" />
-          </IconButton>
+          </a>
           <a href="https://www.material-tailwind.com/blocks" target="_blank">
-            <Button color={isScrolling ? "gray" : "white"} size="sm">
-              Blocks
+            <Button 
+              size="sm"  // Cambiado a "sm" para un botón más pequeño
+              color="white"
+              placeholder=""
+              onPointerEnterCapture={() => {}}
+              onPointerLeaveCapture={() => {}}
+              className="flex justify-center items-center gap-1 border border-blue-gray-50"
+            >
+              <Image
+                width={64}  // Reducido de 128 a 64
+                height={64} // Reducido de 128 a 64
+                className="w-3 h-3" // Ajustado para mantener las proporciones
+                alt="Material Tailwind"
+                src="https://www.material-tailwind.com/favicon.png"
+              />{" "}
+              Ejemplos
             </Button>
           </a>
+          
         </div>
         <IconButton
           variant="text"

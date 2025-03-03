@@ -1,27 +1,35 @@
 "use client";
 
 import React from "react";
+import YouTube from "react-youtube";
 import Image from "next/image";
 import { IconButton } from "@material-tailwind/react";
 import { PlayIcon } from "@heroicons/react/24/outline";
 
+const opts = {
+  width: '100%',
+  height: '100%',
+};
 
 export function VideoIntro() {
+  const videoId = "3jwGbwSr4WE";
   return (
-    <div className="p-8">
-      <div className="w-full container px-5 overflow-hidden rounded-xl relative mx-auto mt-20 max-w-6xl ">
-        <div className="bg-black/25 z-10 absolute w-full h-full inset-0 rounded-xl" />
+    <div className="p-4 sm:p-8">
+      <div className="container mx-auto max-w-6xl px-5 overflow-hidden rounded-xl relative mt-20">
+        <div className="absolute inset-0 bg-black/25 z-10 rounded-xl"></div>
         <Image
           width={768}
-          height={400}
+          height={650}
           src="/image/Background.png"
           className="w-full object-cover scale-110 rounded-xl h-full"
           alt=""
         />
-        <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 z-10">
-          <IconButton color="white" className="rounded-full" size="lg">
-            <PlayIcon className="h-6 w-6" />
-          </IconButton>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+          <YouTube 
+            videoId={videoId} 
+            opts={opts}
+            className="w-[50vw] h-[40vh] object-contain"
+          />
         </div>
       </div>
     </div>
