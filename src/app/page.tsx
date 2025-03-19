@@ -12,12 +12,19 @@ export default function Campaign() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <section id="hero-section">
+        <Hero />
+      </section>
       <VideoIntro />
-      <Feature />
+      <section id="feature-section">
+        <Feature />
+      </section>
       <MobileConvenience />
-      <Testimonials />
+      <section id="testimonials-section">
+        <Testimonials />
+      </section>
       <Footer />
     </>
   );
 }
+

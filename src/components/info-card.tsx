@@ -12,8 +12,16 @@ export function InfoCard({ title, children, price, initial }: InfoCardProps) {
   const content = children ?? 'Contenido predeterminado';
 
   return (
-    <Card className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-all hover:shadow-lg">
-      <CardBody className="p-6">
+    <Card 
+    className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-all hover:shadow-lg"
+    placeholder=""
+    onPointerEnterCapture={() => {}} 
+    onPointerLeaveCapture={() => {}}>
+      <CardBody 
+        className="p-6"
+        placeholder=""
+        onPointerEnterCapture={() => {}} 
+        onPointerLeaveCapture={() => {}}>
         <div className="mb-6 flex items-center">
           <div className="flex-1 text-center">
             <Typography placeholder="" onPointerEnterCapture={() => {}} 

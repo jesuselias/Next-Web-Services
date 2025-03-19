@@ -23,9 +23,27 @@ export function TestimonialCard({
   correo2,
 }: TestimonialCardProps) {
   return (
-    <Card shadow={false} className="items-center text-center">
-      <CardBody>
-        <Avatar src={img} className="mb-3" alt={client} size="lg" />
+    <Card 
+    shadow={false} 
+    className="items-center text-center"
+    placeholder=""
+    onPointerEnterCapture={() => {}} 
+    onPointerLeaveCapture={() => {}}
+    >
+      <CardBody 
+        placeholder=""
+        onPointerEnterCapture={() => {}} 
+        onPointerLeaveCapture={() => {}}
+      >
+        <Avatar 
+        src={img} 
+          className="mb-3" 
+          alt={client} 
+          size="lg" 
+          placeholder=""
+          onPointerEnterCapture={() => {}} 
+          onPointerLeaveCapture={() => {}}
+        />
         <Typography placeholder="" onPointerEnterCapture={() => {}} 
           onPointerLeaveCapture={() => {}} variant="h6" color="blue-gray">
           {client}

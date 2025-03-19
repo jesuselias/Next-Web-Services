@@ -20,8 +20,16 @@ export function FeatureCard({
   initial 
 }: FeatureCardProps) {
   return (
-    <Card className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-all hover:shadow-lg">
-      <CardBody className="p-6">
+    <Card 
+    className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-all hover:shadow-lg"
+    placeholder=""
+    onPointerEnterCapture={() => {}} 
+    onPointerLeaveCapture={() => {}}>
+      <CardBody 
+      className="p-6" 
+      placeholder=""
+      onPointerEnterCapture={() => {}} 
+      onPointerLeaveCapture={() => {}}>
         <div className="mb-6 flex items-center">
           <div className="mr-4 h-12 w-12 flex-shrink-0 rounded-lg bg-gray-900 p-2.5 text-white">
             <Icon className="h-6 w-6" />

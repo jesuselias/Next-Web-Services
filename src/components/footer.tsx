@@ -2,8 +2,29 @@
 import Image from "next/image";
 import { Typography, IconButton, Button } from "@material-tailwind/react";
 
-const LINKS = ["Inicio", "Servicios", "Contactanos"];
+const LINKS = [
+  { name: "Inicio", section: "hero-section" },
+  { name: "Servicios", section: "feature-section" },
+  { name: "Contáctanos", section: "testimonials-section" },
+];
+
 const CURRENT_YEAR = new Date().getFullYear();
+
+const scrollToSection = (sectionId: string, offset: number = 0) => {
+  setTimeout(() => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - offset, // Calcula la posición relativa
+        behavior: "smooth",
+      });
+    } else {
+      console.warn(`No se encontró la sección con ID: ${sectionId}`);
+    }
+  }, 100);
+};
+
+
 
 export function Footer() {
   return (
@@ -33,11 +54,12 @@ export function Footer() {
             </Typography>
             <ul className="flex flex-wrap items-center justify-center md:justify-start">
               {LINKS.map((link, idx) => (
-                <li key={link}>
+                <li key={link.name}>
                   <Typography
-                  placeholder=""
-                   onPointerEnterCapture={() => {}} 
-                   onPointerLeaveCapture={() => {}}
+                    onClick={() => scrollToSection(link.section, -100)}
+                    placeholder=""
+                    onPointerEnterCapture={() => {}} 
+                    onPointerLeaveCapture={() => {}}
                     as="a"
                     href="#"
                     color="white"
@@ -45,7 +67,7 @@ export function Footer() {
                       idx === 0 ? "pr-3" : "px-3"
                     }`}
                   >
-                    {link}
+                    {link.name}
                   </Typography>
                 </li>
               ))}
@@ -65,6 +87,9 @@ export function Footer() {
                   size="lg"
                   color="white"
                   className="flex justify-center items-center gap-3"
+                  placeholder=""
+                  onPointerEnterCapture={() => {}} 
+                  onPointerLeaveCapture={() => {}}
                 >
                   <Image
                     width={256}
@@ -81,6 +106,9 @@ export function Footer() {
                   size="lg"
                   color="white"
                   className="flex justify-center items-center gap-3"
+                  placeholder=""
+                  onPointerEnterCapture={() => {}} 
+                  onPointerLeaveCapture={() => {}}
                 >
                   <Image
                     width={256}
@@ -121,6 +149,9 @@ export function Footer() {
                 variant="text"
                 color="white"
                 size="sm"
+                placeholder=""
+                onPointerEnterCapture={() => {}} 
+                onPointerLeaveCapture={() => {}}
               >
                 <i className="fa-brands fa-github text-2xl not-italic opacity-75" />
               </IconButton>
@@ -129,6 +160,9 @@ export function Footer() {
               <IconButton
                 variant="text"
                 color="white"
+                placeholder=""
+                onPointerEnterCapture={() => {}} 
+                onPointerLeaveCapture={() => {}}
               >
                 <i className="fa-brands fa-linkedin text-2xl not-italic opacity-75" />
               </IconButton>
@@ -137,9 +171,36 @@ export function Footer() {
               <IconButton
                 variant="text"
                 color="white"
+                placeholder=""
+                onPointerEnterCapture={() => {}} 
+                onPointerLeaveCapture={() => {}}
               >
               <i className="fa-brands fa-youtube text-2xl not-italic opacity-75" />
             </IconButton>
+            </a>
+             <a href="https://www.tiktok.com/@jesuseliasdev" target="_blank">
+              <IconButton 
+              variant="text" 
+               color="white"
+              size="sm"
+              placeholder="" 
+              onPointerEnterCapture={() => {}} 
+              onPointerLeaveCapture={() => {}}
+              >
+                <i className="fa-brands fa-tiktok text-base" />
+              </IconButton>
+            </a>
+            <a href="https://www.instagram.com/jesuseliasdev/" target="_blank">
+              <IconButton 
+              variant="text" 
+              color="white"
+              size="sm"
+              placeholder="" 
+              onPointerEnterCapture={() => {}} 
+              onPointerLeaveCapture={() => {}}
+              >
+                <i className="fa-brands fa-instagram text-base" />
+              </IconButton>
             </a>
           </div>
         </div>

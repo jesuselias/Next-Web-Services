@@ -8,25 +8,25 @@ const OPTIONS = [
   {
     title: "Aplicación Sencilla",
     description: "App mobile y funcionalidades básicas",
-    price: "$800-$2,000 USD",
+    price: "$800-$1,500 USD",
     initial: "30% para inicio"
   },
   {
     title: "Aplicación Media",
     description: "Panel de administración y API REST",
-    price: "$3,000-$5,000 USD",
+    price: "$1,500-$3,000 USD",
     initial: "35% para inicio"
   },
   {
     title: "Aplicación Compleja",
     description: "Microservicios y sistema de roles",
-    price: "$6,000-$10,000 USD",
+    price: "$3,000-$5,000 USD",
     initial: "40% para inicio"
   },
   {
     title: "Aplicación Enterprise",
     description: "Soporte 24/7 y escalabilidad garantizada",
-    price: "$12,000-$20,000 USD",
+    price: "$5,000-$10,000 USD",
     initial: "45% para inicio"
   }
 ];
@@ -56,7 +56,7 @@ export function MobileConvenience() {
           >
             Accede a nuestros servicios móviles desde cualquier lugar.
           </Typography>
-          <div className="grid gap-5 grid-cols-2">
+          <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto items-center">
             {OPTIONS.map((props, idx) => (
               <InfoCard
                 key={idx}
