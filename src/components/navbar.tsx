@@ -74,7 +74,7 @@ export function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Avatar 
-          src="logos/logo-je-blue.png" 
+          src="logos/logo-je-blue-developer-3d.png" 
           className="mb-3" 
           size="lg"
           placeholder="" 
