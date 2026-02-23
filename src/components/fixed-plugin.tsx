@@ -11,7 +11,7 @@ export function FixedPlugin() {
     console.log('Download button clicked');
     setIsLoading(true);
 
-    const pdfUrl = '/CV_Full_Stack_Jesus_Elias.pdf';
+    const pdfUrl = '/CV_Full_Stack_Jesus_Elias_2026.pdf';
 
     const link = document.createElement('a');
     link.href = pdfUrl;
